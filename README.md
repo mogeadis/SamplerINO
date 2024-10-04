@@ -21,7 +21,7 @@
 **SamplerINO** utilizes an *ATmega32U4* microcontroller and two *CAP1188* 8-channel capacitive touch sensor modules to assemble a USB MIDI controller featuring 16 touch-sensitive pads. The prototype circuit board is housed inside a custom-designed 3D printed enclosure, which facilitates the installation of the pads, as well as an LED indicator and a power switch. You can watch a video demonstration of this hardware MIDI controller and its dedicated software sampler at the following [link](https://www.youtube.com).
 
 ### Repository
-The code in this repository is organized into several directories, with the source (`.cpp`) files, header (`.h`) files, and external libraries of the controller located in the [*src*](src), [*include*](include), and [*lib*](lib) directories, respectively. The *Max* patch implementing the user interface of the accompanying sampler, along with a collection of drum samples gathered from various royalty-free web sources, are contained in the [*max*](max) directory. Lastly, all hardware-related files (i.e. the circuit diagram and the 3D model designs) are located in the [*hw*](hw) directory, while the [*img*](img) directory contains all images displayed in the present documentation.
+The code in this repository is organized into several directories, with the source (`.cpp`) files, header (`.h`) files, and external libraries of the controller located in the [*src*](src), [*include*](include), and [*lib*](lib) directories, respectively. The *Max* patch implementing the user interface of the accompanying sampler, along with a collection of drum samples gathered from various royalty-free web sources, are contained in the [*max*](max) directory. Lastly, the 3D model (`.stl`) files are located in the [*3d*](3d) directory, while the [*img*](img) directory contains all images displayed in the present documentation.
 
 ### Technical Details
 This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windows 10`, with the *PlatformIO* extension employed to upload the code to the *ATmega32U4* microcontroller embedded in an *Arduino*-compatible *Pro Micro* board. The controller pads were made by cutting 4×4cm pieces from a 0.5mm thick copper sheet, while the enclosure screw holes were designed for M2 threaded heat inserts. Lastly, a common anode RGB LED was used for the LED indicator.
@@ -33,15 +33,15 @@ This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windo
 ![circuit.png](img/circuit.png "Circuit Diagram")
 
 ### 3D Models
-![model1.png](img/model1.png "3D Model (Body)")
+![model1.png](img/model1.png "3D Model (Cover)")
 ![model2.png](img/model2.png "3D Model (Lid)")
-![model3.png](img/model3.png "3D Model (Cover)")
+![model3.png](img/model3.png "3D Model (Body)")
 
 ### Controller Device
-![dev1.png](img/dev1.png "dev1")
-![dev2.png](img/dev2.png "dev2")
-![dev3.png](img/dev3.png "dev3")
-![dev4.png](img/dev4.png "dev4")
+![controller1.png](img/controller1.png "Controller (#1)")
+![controller2.png](img/controller2.png "Controller (#2)")
+![controller3.png](img/controller3.png "Controller (#3)")
+![controller4.png](img/controller4.png "Controller (#4)")
 
 ### User Interface
 ![UI.png](img/UI.png "User Interface")
