@@ -38,10 +38,10 @@ This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windo
 ![model3.png](img/model3.png "3D Model (Cover)")
 
 ### Controller Device
-![dev1.jpg](img/dev1.jpg "dev1")
-![dev2.jpg](img/dev2.jpg "dev2")
-![dev3.jpg](img/dev3.jpg "dev3")
-![dev4.jpg](img/dev4.jpg "dev4")
+![dev1.png](img/dev1.png "dev1")
+![dev2.png](img/dev2.png "dev2")
+![dev3.png](img/dev3.png "dev3")
+![dev4.png](img/dev4.png "dev4")
 
 ### User Interface
 ![UI.png](img/UI.png "User Interface")
