@@ -24,7 +24,7 @@
 The code in this repository is organized into several directories, with the source (`.cpp`) files, header (`.h`) files, and external libraries of the controller located in the [*src*](src), [*include*](include), and [*lib*](lib) directories, respectively. The *Max* patch implementing the user interface of the accompanying sampler, along with a collection of drum samples gathered from various royalty-free web sources, are contained in the [*max*](max) directory. Lastly, all hardware-related files (i.e. the circuit diagram and the 3D model designs) are located in the [*hw*](hw) directory, while the [*img*](img) directory contains all images displayed in the present documentation.
 
 ### Technical Details
-This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windows 10`, with the *PlatformIO* extension employed to upload the code to the *ATmega32U4* microcontroller embedded in an *Arduino*-compatible *Pro Micro* board. The controller pads were made by cutting 4×4cm pieces from a 0.5mm thick copper sheet, while a common anode RGB LED was used for the LED indicator.
+This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windows 10`, with the *PlatformIO* extension employed to upload the code to the *ATmega32U4* microcontroller embedded in an *Arduino*-compatible *Pro Micro* board. The controller pads were made by cutting 4×4cm pieces from a 0.5mm thick copper sheet, while the enclosure screw holes were designed for M2 threaded heat inserts. Lastly, a common anode RGB LED was used for the LED indicator.
 
 
 ## Gallery
@@ -33,8 +33,15 @@ This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windo
 ![circuit.png](img/circuit.png "Circuit Diagram")
 
 ### 3D Models
+![model1.png](img/model1.png "3D Model (Body)")
+![model2.png](img/model2.png "3D Model (Lid)")
+![model3.png](img/model3.png "3D Model (Cover)")
 
 ### Controller Device
+![dev1.jpg](img/dev1.jpg "dev1")
+![dev2.jpg](img/dev2.jpg "dev2")
+![dev3.jpg](img/dev3.jpg "dev3")
+![dev4.jpg](img/dev4.jpg "dev4")
 
 ### User Interface
 ![UI.png](img/UI.png "User Interface")

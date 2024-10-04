@@ -31,6 +31,7 @@ void setupModules()
             modules[m].writeRegister(CYCLE_REGISTER,CYCLE_VALUE);
             modules[m].writeRegister(SENSITIVITY_REGISTER,SENSITIVITY_VALUE);
             modules[m].writeRegister(STANDBY_REGISTER,STANDBY_VALUE);
+            modules[m].writeRegister(STANDBY_SENSITIVITY_REGISTER,STANDBY_SENSITIVITY_VALUE);
             modules[m].writeRegister(CALIBRATION_REGISTER,CALIBRATION_VALUE);
             modules[m].writeRegister(RECALIBRATION_REGISTER,RECALIBRATION_VALUE);
             if(DEBUG)

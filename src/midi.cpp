@@ -12,7 +12,7 @@ Date: May 2024
 
 // Define Variables
 const byte notes[] = {36,52,55,49,38,48,47,45,42,46,44,39,51,53,56,37};
-const byte mapping[] = {15,14,11,10,6,7,2,3,0,1,4,5,9,8,13,12};
+const byte mapping[] = {3,2,6,7,11,10,14,15,0,1,5,4,8,9,13,12};
 
 // Define Functions
 void sendNoteOn(byte note)
