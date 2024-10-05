@@ -22,8 +22,11 @@ void setup()
 
 void loop()
 {
-	detectTouch();
-	registerNotes();
-	sendData();
-	flashLED();
+	if(interrupt)
+	{
+		registerNotes();
+		sendData();
+		interrupt = false;
+	}
+	controlLED();
 }

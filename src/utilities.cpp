@@ -11,7 +11,7 @@ Date: May 2024
 #include "utilities.h"
 
 // Define Variables
-unsigned long flash_timer = 0;
+unsigned long timer = 0;
 
 // Define Functions
 void setupSerial()
@@ -26,10 +26,23 @@ void setupSerial()
 	}
 }
 
-byte getColorValue(byte ratio)
+void setupLED()
+{
+    pinMode(RED_PIN,OUTPUT);
+    pinMode(GREEN_PIN,OUTPUT);
+    changeColor(INTENSITY,0);
+}
+
+void changeColor(byte red,byte green)
+{
+    analogWrite(RED_PIN,getAnalogValue(red));
+    analogWrite(GREEN_PIN,getAnalogValue(green));
+}
+
+byte getAnalogValue(byte color)
 {
     byte value;
-    value = map(ratio,0,100,0,255);
+    value = map(color,0,100,0,255);
     if(COMMON_ANODE)
     {
         value = 255 - value;
@@ -37,29 +50,16 @@ byte getColorValue(byte ratio)
     return value;
 }
 
-void changeColor(byte red_ratio,byte green_ratio)
-{
-    analogWrite(RED_PIN,getColorValue(red_ratio));
-    analogWrite(GREEN_PIN,getColorValue(green_ratio));
-}
-
-void setupLED()
-{
-    changeColor(INTENSITY,0);
-    pinMode(RED_PIN,OUTPUT);
-    pinMode(GREEN_PIN,OUTPUT);
-}
-
-void flashLED()
+void controlLED()
 {
     if(active_sensors > 0)
 	{
-		changeColor(0,INTENSITY);
-		flash_timer = millis();
+		active_sensors == 1 ? changeColor(INTENSITY,INTENSITY) : changeColor(0,INTENSITY);
+		timer = millis();
 	}
 	else
 	{
-		if(millis() - flash_timer >= FLASH_DURATION)
+		if(millis() - timer >= DURATION)
 		{
 			changeColor(INTENSITY,0);
 		}
@@ -68,35 +68,49 @@ void flashLED()
 
 void registerNotes()
 {
-    for(byte index = 0; index < NUM_OF_SENSORS; index++)
-	{
-		if(touch[index] == 1)
-		{
-			sendNoteOn(notes[mapping[index]]);
-			touch[index] = 0;
-			if(DEBUG)
-			{
-				Serial.print("Sensor: ");
-				Serial.print(index + 1);
-				Serial.print(" | Sample: ");
-				Serial.print(mapping[index] + 1);
-				Serial.print(" | MIDI Note On: ");
-				Serial.println(notes[mapping[index]]);
-			}
-		}
-		if(release[index] == 1)
-		{
-			sendNoteOff(notes[mapping[index]]);
-			release[index] = 0;
-			if(DEBUG)
-			{
-				Serial.print("Sensor: ");
-				Serial.print(index + 1);
-				Serial.print(" | Sample: ");
-				Serial.print(mapping[index] + 1);
-				Serial.print(" | MIDI Note Off: ");
-				Serial.println(notes[mapping[index]]);
-			}
-		}
-	}
+    for(byte m = 0; m < NUM_OF_MODULES; m++)
+    {
+        modules[m].writeRegister(MAIN_REGISTER,modules[m].readRegister(MAIN_REGISTER) & ~1);
+        byte active_bits = modules[m].readRegister(SENSORS_REGISTER);
+        for(byte s = 0; s < SENSORS_PER_MODULE; s++)
+        {
+            byte index = m*SENSORS_PER_MODULE + s;
+            if((active_bits & (1 << s)))
+            {
+                if(sensor_state[index] == 0)
+                {
+                    sendNoteOn(notes[mapping[index]]);
+                    sensor_state[index] = 1;
+                    active_sensors++;
+                    if(DEBUG)
+                    {
+                        Serial.print("Sensor: ");
+                        Serial.print(index + 1);
+                        Serial.print(" | Sample: ");
+                        Serial.print(mapping[index] + 1);
+                        Serial.print(" | MIDI Note On: ");
+                        Serial.println(notes[mapping[index]]);
+                    }
+                }
+            }
+            else
+            {
+                if(sensor_state[index] == 1)
+                {
+                    sendNoteOff(notes[mapping[index]]);
+                    sensor_state[index] = 0;
+                    active_sensors--;
+                    if(DEBUG)
+                    {
+                        Serial.print("Sensor: ");
+                        Serial.print(index + 1);
+                        Serial.print(" | Sample: ");
+                        Serial.print(mapping[index] + 1);
+                        Serial.print(" | MIDI Note Off: ");
+                        Serial.println(notes[mapping[index]]);
+                    }
+                }
+            }
+        }
+    }
 }

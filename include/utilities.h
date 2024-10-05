@@ -21,18 +21,18 @@ Date: May 2024
 #define RED_PIN 3
 #define GREEN_PIN 5
 #define COMMON_ANODE 1
-#define FLASH_DURATION 50
 #define INTENSITY 25
+#define DURATION 50
 
 // Declare Variables
-extern unsigned long flash_timer;
+extern unsigned long timer;
 
 // Declare Functions
 void setupSerial();
-byte getColorValue(byte percentage);
-void changeColor(byte red,byte green);
 void setupLED();
-void flashLED();
+void controlLED();
+void changeColor(byte red,byte green);
+byte getAnalogValue(byte color);
 void registerNotes();
 
 #endif
