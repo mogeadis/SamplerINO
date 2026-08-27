@@ -1,4 +1,4 @@
-# SamplerINO 🎛️
+# SamplerINO 🔲
 
 
 ## Table of Contents
