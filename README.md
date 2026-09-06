@@ -10,7 +10,7 @@
 - [Gallery](#gallery)
     - [Circuit Diagram](#circuit-diagram)
     - [3D Models](#3d-models)
-    - [Controller Device](#controller-device)
+    - [Hardware Assembly](#hardware-assembly)
     - [User Interface](#user-interface)
 - [License](#license)
 
@@ -18,7 +18,7 @@
 ## Description
 
 ### Project
-**SamplerINO** utilizes an *ATmega32U4* microcontroller and two *CAP1188* 8-channel capacitive touch sensor modules to assemble a USB MIDI controller featuring 16 touch-sensitive pads. The prototype circuit board is housed inside a custom-designed 3D printed enclosure, which facilitates the installation of the pads, as well as an LED indicator and a power switch. You can watch a video demonstration of this hardware MIDI controller and its dedicated software sampler at the following [link](https://youtu.be/h78V249fnw0).
+**SamplerINO** utilizes an *ATmega32U4* microcontroller and two *CAP1188* 8-channel capacitive touch sensor modules to assemble a USB MIDI controller featuring 16 touch-sensitive pads. The prototype circuit board is housed inside a custom-designed 3D printed enclosure, which facilitates the installation of the pads, as well as an LED indicator and a power switch. You can watch a video demonstration of this hardware MIDI controller and its dedicated software sampler at the following [link](https://youtu.be/IzE63Gio5Jo).
 
 ### Repository
 The code in this repository is organized into several directories, with the source (`.cpp`) and header (`.h`) files of the controller located in the [*src*](src) and [*include*](include) directories, respectively. The *Max* patch implementing the user interface of the accompanying sampler, along with a collection of drum samples gathered from various royalty-free web sources, are contained in the [*max*](max) directory. Lastly, the 3D model (`.stl`) files are located in the [*3d*](3d) directory, while the [*img*](img) directory contains all images displayed in the present documentation.
@@ -37,7 +37,7 @@ This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windo
 ![model2.png](img/model2.png "3D Model (Lid)")
 ![model3.png](img/model3.png "3D Model (Body)")
 
-### Controller Device
+### Hardware Assembly
 ![controller1.png](img/controller1.png "Controller (#1)")
 ![controller2.png](img/controller2.png "Controller (#2)")
 ![controller3.png](img/controller3.png "Controller (#3)")
