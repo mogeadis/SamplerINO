@@ -33,15 +33,15 @@ This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windo
 ![circuit.png](img/circuit.png "Circuit Diagram")
 
 ### 3D Models
-![model1.png](img/model1.png "3D Model (Cover)")
-![model2.png](img/model2.png "3D Model (Lid)")
-![model3.png](img/model3.png "3D Model (Body)")
+![model1.png](img/model1.png "3D Model (#1)")
+![model2.png](img/model2.png "3D Model (#2)")
+![model3.png](img/model3.png "3D Model (#3)")
 
 ### Hardware Assembly
-![controller1.png](img/controller1.png "Controller (#1)")
-![controller2.png](img/controller2.png "Controller (#2)")
-![controller3.png](img/controller3.png "Controller (#3)")
-![controller4.png](img/controller4.png "Controller (#4)")
+![hardware1.png](img/hardware1.png "Hardware (#1)")
+![hardware2.png](img/hardware2.png "Hardware (#2)")
+![hardware3.png](img/hardware3.png "Hardware (#3)")
+![hardware4.png](img/hardware4.png "Hardware (#4)")
 
 ### User Interface
 ![UI.png](img/UI.png "User Interface")
@@ -49,8 +49,8 @@ This project was developed using `Max 8.1.11` and *Visual Studio Code* on `Windo
 
 ## License
 
-*SamplerINO* © *2024* by *Alexandros Iliadis* is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/).
+*SamplerINO* © *2024* by *Alexandros Iliadis* is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
-Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 See the [`LICENSE.md`](LICENSE.md) file for more details.
